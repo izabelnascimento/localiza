@@ -23,11 +23,11 @@ public class POI {
     private String name;
 
     @Column
-    private Float radius;
+    private Double radius;
 
     @Column
-    private Float latitude;
+    private Double latitude;
 
     @Column
-    private Float longitude;
+    private Double longitude;
 }

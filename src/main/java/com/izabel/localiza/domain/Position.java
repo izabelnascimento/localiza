@@ -30,10 +30,10 @@ public class Position {
     private Integer speed;
 
     @Column
-    private Float longitude;
+    private Double longitude;
 
     @Column
-    private Float latitude;
+    private Double latitude;
 
     @Column
     private Boolean ignitionOn;
