@@ -5,8 +5,11 @@ e calcular quando tempo o veículo permaneceu nesses pontos.
 
 (Cálculo matemático de Haversine utilizado para a distância)
 
-Swagguer:
+Swagguer local:
 http://localhost:8080/swagger-ui/index.html#/
+
+Swagger Railway:
+https://localiza-production.up.railway.app/swagger-ui/index.html#/
 
 Consultar localizações:
 http://maps.google.com/maps?q=-25.5244493,-51.549662
