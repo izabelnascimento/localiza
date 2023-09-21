@@ -28,19 +28,17 @@ public class PositionServiceImpl implements PositionService {
 
         optionalPosition.ifPresent(value -> position.setId(value.getId()));
 
-        api(position);
+        checkPOI(position);
         return this.positionRepository.save(position);
     }
 
-    private void api(Position position){
+    private void checkPOI(Position position){
         List<POI> pois = this.poiService.getAll();
         for (POI poi: pois) {
             if (this.utils.isInsidePOI(position, poi)){
-                System.out.println("-----------isInsidePOI = true-------------");
                 Optional<VehiclePOI> optionalVehiclePOI =
                         this.vehiclePOIService.getVehiclePOIByPlateAndPoi(position.getPlate(), poi);
                 if (optionalVehiclePOI.isPresent()){
-                    System.out.println("-----------optionalVehiclePOI.isPresent() = true-------------");
                     VehiclePOI vehiclePOI = optionalVehiclePOI.get();
 
                     long timePosition = position.getPositionDate().getTime();
@@ -48,14 +46,11 @@ public class PositionServiceImpl implements PositionService {
                     long endTime = vehiclePOI.getEndTime().getTime();
 
                     if (timePosition <= startTime){
-                        System.out.println("-----------position.getPositionDate() -> before-------------");
                         vehiclePOI.setStartTime(position.getPositionDate());
                     } else if (timePosition >= endTime) {
-                        System.out.println("-----------position.getPositionDate() -> after-------------");
                         vehiclePOI.setEndTime(position.getPositionDate());
                     }
                 } else {
-                    System.out.println("-----------optionalVehiclePOI.isPresent() = false-------------");
                     VehiclePOI vehiclePOI = new VehiclePOI();
                     vehiclePOI.setPlate(position.getPlate());
                     vehiclePOI.setStartTime(position.getPositionDate());
