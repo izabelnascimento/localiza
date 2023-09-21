@@ -22,6 +22,12 @@ public class PositionServiceImpl implements PositionService {
 
     @Override
     public Position create(Position position) {
+        Optional<Position> optionalPosition = this.positionRepository.getPositionByPlateAndPositionDate(
+                position.getPlate(),
+                position.getPositionDate());
+
+        optionalPosition.ifPresent(value -> position.setId(value.getId()));
+
         api(position);
         return this.positionRepository.save(position);
     }

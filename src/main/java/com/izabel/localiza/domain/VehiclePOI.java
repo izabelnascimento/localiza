@@ -38,12 +38,14 @@ public class VehiclePOI {
 
     public void setStartTime(Date startTime){
         this.startTime = startTime;
-        this.durationMillis = this.endTime.getTime() - this.startTime.getTime();
+        if (this.endTime != null)
+            this.durationMillis = this.endTime.getTime() - this.startTime.getTime();
     }
 
     public void setEndTime(Date endTime){
         this.endTime = endTime;
-        this.durationMillis = this.endTime.getTime() - this.startTime.getTime();
+        if (this.startTime != null)
+            this.durationMillis = this.endTime.getTime() - this.startTime.getTime();
     }
 
 }
