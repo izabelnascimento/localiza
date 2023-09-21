@@ -1,0 +1,37 @@
+https://www.google.com/maps/dir/'-22.718252406214955,-46.78627558343578'/'-22.719447,-46.779466'/@-22.7184524,-46.7852409,16.75z/data=!4m9!4m8!1m3!2m2!1d-46.7862756!2d-22.7182524!1m3!2m2!1d-46.779466!2d-22.719447?entry=ttu
+
+poi
+{
+  "latitude": -22.718252406214955,
+  "longitude": -46.78627558343578,
+  "name": "PONTO TESTE MANUAL",
+  "radius": 1000
+}
+
+position true
+{
+  "ignitionOn": true,
+  "latitude": -22.719447,
+  "longitude": -46.779466,
+  "plate": "teste manual 01",
+  "positionDate": "2023-09-19T01:35:36.990Z",
+  "speed": 100
+}
+{
+  "ignitionOn": true,
+  "latitude": -22.718490,
+  "longitude": -46.783422,
+  "plate": "teste manual 01",
+  "positionDate": "2023-09-29T01:35:36.990Z",
+  "speed": 100
+}
+
+position false
+{
+  "ignitionOn": true,
+  "latitude": -0.697140,
+  "longitude": -67.285262,
+  "plate": "teste manual 01",
+  "positionDate": "2023-09-09T01:35:36.990Z",
+  "speed": 100
+}
