@@ -6,8 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class LocalizaApplication {
 
-    //TODO FAZER O CALCULO NO CADASTRO DE POI
-    //TODO TESTES UNITARIOS
     //TODO DTOS
     //TODO DURATION
     //TODO REMOVER CODIGO DESNECESSÁRIO (PRINTS, IMPORTS)
