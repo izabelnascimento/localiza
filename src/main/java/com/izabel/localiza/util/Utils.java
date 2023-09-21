@@ -28,6 +28,8 @@ public class Utils {
                         Math.pow(Math.sin(dLon / 2), 2);
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
-        return EARTH_RADIUS * c;
+        double distanceKm = EARTH_RADIUS * c;
+        //metros
+        return distanceKm * 1000;
     }
 }

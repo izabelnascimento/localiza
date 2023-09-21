@@ -42,10 +42,15 @@ public class PositionServiceImpl implements PositionService {
                 if (optionalVehiclePOI.isPresent()){
                     System.out.println("-----------optionalVehiclePOI.isPresent() = true-------------");
                     VehiclePOI vehiclePOI = optionalVehiclePOI.get();
-                    if (position.getPositionDate().before(vehiclePOI.getStartTime())){
+
+                    long timePosition = position.getPositionDate().getTime();
+                    long startTime = vehiclePOI.getStartTime().getTime();
+                    long endTime = vehiclePOI.getEndTime().getTime();
+
+                    if (timePosition <= startTime){
                         System.out.println("-----------position.getPositionDate() -> before-------------");
                         vehiclePOI.setStartTime(position.getPositionDate());
-                    } else if (position.getPositionDate().after(vehiclePOI.getEndTime())) {
+                    } else if (timePosition >= endTime) {
                         System.out.println("-----------position.getPositionDate() -> after-------------");
                         vehiclePOI.setEndTime(position.getPositionDate());
                     }
